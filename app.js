@@ -108,6 +108,7 @@
     if(!src)return 'none';
     if(/\.(mp4|webm|ogg|mov|m4v)(\?|#|$)/.test(src)) return 'video';
     if(/\.(heic|heif)(\?|#|$)/.test(src)) return 'heic';
+    if(/\.(zip|rar|7z|pdf|doc|docx|xls|xlsx|ppt|pptx)(\?|#|$)/.test(src)) return 'file';
     return 'image';
   }
   function renderMedia(post){
@@ -119,6 +120,9 @@
     }
     if(kind==='heic'){
       return '<div class="post-media-box heic-box"><div class="heic-note">HEIC / HEIF 파일</div><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener" class="button">파일 열기</a></div>';
+    }
+    if(kind==='file'){
+      return '<div class="post-media-box file-box"><div class="file-note">첨부 파일</div><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener" class="button">파일 열기</a></div>';
     }
     return '<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener" class="post-media-box post-img-link"><img src="'+escapeHtml(url)+'" class="post-img" loading="lazy" alt="'+escapeHtml(post.title||"media")+'"></a>';
   }
@@ -148,7 +152,9 @@
     var r=await sb.from('posts').select('id,title,body,image_url,image_path,created_at,author_name,section,category').order('created_at',{ascending:false});
     if(r.error){setStatus(st,r.error.message,'error');return;}
     setStatus(st,'');
-    renderPosts(c,(r.data||[]).slice(0,3),'아직 업로드된 글이 없습니다.');
+    renderPosts(c,(r.data||[]).slice(0,6),'아직 업로드된 글이 없습니다.');
+    c.classList.add('post-strip','latest-strip');
+    enableDragScroll(c);
   }
   async function renderSectionPosts(){
     var containers=qsa('[data-section]');if(!containers.length)return;
@@ -161,6 +167,10 @@
       var r=await q;
       if(r.error){setStatus(st,r.error.message,'error');return;}
       renderPosts(c,r.data||[],cat?cat+' 글이 없습니다.':(sec==='gallery'?'갤러리':'게시판')+' 글이 없습니다.');
+      if(sec==='gallery'){
+        c.classList.remove('post-strip');
+        c.classList.add('gallery-grid');
+      }
     }
     setStatus(st,'');
   }
