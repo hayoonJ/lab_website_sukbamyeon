@@ -1,7 +1,7 @@
 <!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>숙주-바이러스 면역동력학 연구실</title><link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script defer src="app.js"></script></head><body data-bg-key="home"><header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="index.html">
-      <img src="assets/assets/images/sukbamyeon.jpg" alt="숙바면 아이콘">
+      <img src="assets/images/sukbamyeon.jpg" alt="숙바면 아이콘">
       <span class="brand-text">숙주-바이러스 면역동력학 연구실<small>Host-Virus Immunodynamics Laboratory</small></span>
     </a>
     <button class="nav-toggle" id="nav-toggle" type="button">☰</button>
@@ -24,22 +24,59 @@
     </nav>
   </div>
 </header><main>
-<section class="hero">
+<section class="hero hero-professional">
   <div class="container">
-    <section class="hero-banner home-hero faded" data-banner-target>
-      <div class="hero-content center-only">
-        <h1>Host-Virus Immunodynamics Laboratory</h1>
-        <p>숙주 바이러스 면역동력학 연구실</p>
-        <p>School of Life Sciences, College of Natural Sciences, Kyungpook National University</p>
+    <section class="hero-banner home-hero refined-hero" data-banner-target>
+      <div class="hero-content hero-grid">
+        <div class="hero-copy-block">
+          <div class="hero-eyebrow">Host–Virus Immunodynamics</div>
+          <h1>Host-Virus Immunodynamics Laboratory</h1>
+          <p class="hero-subtitle-ko">숙주 바이러스 면역동력학 연구실</p>
+          <p class="hero-subtitle-en">School of Life Sciences, College of Natural Sciences, Kyungpook National University</p>
+          <div class="hero-keywords">
+            <span>Innate immunity</span>
+            <span>Inflammation</span>
+            <span>Emerging &amp; Re-emerging Virus</span>
+            <span>Drug screening</span>
+            <span>Host-virus interaction</span>
+          </div>
+        </div>
+        <div class="hero-visual-card carousel-visual" id="home-research-carousel">
+          <div class="hero-visual-frame carousel-frame">
+            <img id="carousel-image" src="assets/images/slide-innate-signaling.png" alt="선천면역 반응 및 항바이러스 신호전달 기전 연구 figure">
+          </div>
+          <div class="hero-visual-meta">
+            <strong>Featured Figure</strong>
+            <span id="carousel-paper">The Innate Immune Viral Sensors and Their Functional Crosstalk</span>
+          </div>
+          <div class="carousel-dots" id="carousel-dots" aria-label="대표 연구 figure 목록"></div>
+        </div>
       </div>
     </section>
   </div>
 </section>
+<section class="section research-overview-section">
+  <div class="container">
+    <div class="research-overview-grid">
+      <article class="panel overview-card">
+        <div class="kicker">Research Focus</div>
+        <h2>바이러스-숙주 면역 교란 기전 규명</h2>
+        <p>신·변종 바이러스 감염에서 나타나는 선천면역 신호전달, 항원제시 조절, 면역회피 전략의 교란 기전을 연구합니다. 폐 염증 반응과 질환 모델 연구를 함께 확장해 항바이러스 치료 전략과 면역조절 기반 응용으로 연결하고 있습니다.</p>
+      </article>
+      <article class="panel overview-card compact-citation-card">
+        <div class="kicker">Representative Figure</div>
+        <p class="tight" id="carousel-description">항바이러스 센서, IFN 유도, JAK-STAT 신호전달을 포함한 선천면역 반응 축을 요약한 대표 도식입니다.</p>
+        <a class="text-link" href="publication.html">Publication 보기 →</a>
+      </article>
+    </div>
+  </div>
+</section>
 <section class="section summary-interest">
   <div class="container">
-    <div class="card-grid">
-      <article class="panel card"><h3>Research Summary</h3><p>바이러스와 숙주 면역계가 상호작용하는 과정에서 발생하는 선천면역 반응, 바이러스 복제, 면역 회피, 염증 유도, 그리고 항바이러스 방어 전략을 통합적으로 연구합니다.</p></article>
-      <article class="panel card"><h3>Research Interest</h3><p>Viral replication, innate immune signaling, antiviral defense, inflammatory pathology, immune evasion, host-pathogen interaction, translational virology.</p></article>
+    <div class="card-grid research-summary-grid">
+      <article class="panel card"><h3>Emerging &amp; Re-emerging Virus Research</h3><p>코로나바이러스, henipavirus, dengue virus, influenza virus, Zika virus 등 주요 신·변종 바이러스의 병원성, 숙주 상호작용, 면역회피 전략을 연구합니다.</p></article>
+      <article class="panel card"><h3>Pulmonary Inflammatory Molecules</h3><p>폐 특이적 염증 신호전달과 염증성 분자의 기능을 분석하고, 감염성 폐렴 및 만성 기도질환의 병태생리를 규명합니다.</p></article>
+      <article class="panel card"><h3>Drug Screening &amp; Therapeutic Development</h3><p>항바이러스·항염증 후보물질을 스크리닝하고, 감염 및 폐 질환 모델에서 치료 전략의 작용 기전과 효능을 검증합니다.</p></article>
     </div>
   </div>
 </section>
@@ -50,4 +87,85 @@
     <div id="public-post-list" class="post-grid"></div>
   </div>
 </section>
-</main><footer class="site-footer"><div class="container footer-grid"><div><h3>숙주-바이러스 면역동력학 연구실</h3><p>Kyungpook National University</p><p>미래융합과학관 628호</p></div><div><h4>Public Pages</h4><a href="index.html">Home</a><br><a href="publication.html">Publication</a><br><a href="project.html">Project</a><br><a href="members.html">Lab Member</a><br><a href="boards.html">Boards</a><br><a href="gallery.html">Gallery</a></div><div><h4>Member Access</h4><a href="login.html">Login</a><br><a href="dashboard.html">Dashboard</a></div></div></footer></body></html>
+</main><footer class="site-footer"><div class="container footer-grid"><div><h3>숙주-바이러스 면역동력학 연구실</h3><p>Kyungpook National University</p><p>미래융합과학관 628호</p></div><div><h4>Public Pages</h4><a href="index.html">Home</a><br><a href="publication.html">Publication</a><br><a href="project.html">Project</a><br><a href="members.html">Lab Member</a><br><a href="boards.html">Boards</a><br><a href="gallery.html">Gallery</a></div><div><h4>Member Access</h4><a href="login.html">Login</a><br><a href="dashboard.html">Dashboard</a></div></div></footer>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  const slides = [
+    {
+      image: 'assets/images/slide-innate-signaling.png',
+      alt: '선천면역 반응 및 항바이러스 신호전달 기전 연구 figure',
+      paper: 'The Innate Immune Viral Sensors and Their Functional Crosstalk',
+      description: '항바이러스 센서, IFN 유도, JAK-STAT 신호전달을 포함한 선천면역 반응 축을 요약한 대표 도식입니다.'
+    },
+    {
+      image: 'assets/images/slide-sarscov2-mhci.png',
+      alt: 'SARS-CoV-2의 MHC class I 항원제시 억제 figure',
+      paper: 'SARS-CoV-2 inhibits the MHC class I pathway by targeting the STAT1-IRF1-NLRC5 axis',
+      description: 'SARS-CoV-2가 STAT1-IRF1-NLRC5 축과 MHC class I 항원제시 경로를 교란하는 기전을 보여주는 figure입니다.'
+    },
+    {
+      image: 'assets/images/natcomms_fig7.png',
+      alt: 'SARS-CoV-2 ORF6와 MHC class I pathway를 다룬 Nature Communications figure',
+      paper: 'SARS-CoV-2 inhibits the MHC class I pathway by targeting the STAT1-IRF1-NLRC5 axis',
+      description: 'ORF6에 의한 핵내 이동 억제와 MHC class I 발현 저해를 패널별로 정리한 Nature Communications figure입니다.'
+    },
+    {
+      image: 'assets/images/slide-pulmonary-inflammatory.png',
+      alt: '폐 염증 반응 및 질환 모델 연구 figure',
+      paper: 'Lung-specific MCEMP1 functions as an adaptor for KIT to promote SCF-mediated mast cell proliferation',
+      description: '폐 조직 병리, 면역형광, 염증성 분자 신호를 통해 pulmonary inflammatory molecules 연구 축을 보여주는 figure입니다.'
+    }
+  ];
+
+  const imageEl = document.getElementById('carousel-image');
+  const paperEl = document.getElementById('carousel-paper');
+  const descEl = document.getElementById('carousel-description');
+  const dotsEl = document.getElementById('carousel-dots');
+  if (!imageEl || !paperEl || !descEl || !dotsEl) return;
+
+  let current = 0;
+  let timer = null;
+
+  function renderDots() {
+    dotsEl.innerHTML = '';
+    slides.forEach((slide, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'carousel-dot' + (idx === current ? ' active' : '');
+      btn.setAttribute('aria-label', slide.paper);
+      btn.addEventListener('click', function () {
+        current = idx;
+        updateSlide(true);
+      });
+      dotsEl.appendChild(btn);
+    });
+  }
+
+  function updateSlide(resetTimer) {
+    const slide = slides[current];
+    imageEl.classList.add('is-swapping');
+    setTimeout(function () {
+      imageEl.src = slide.image;
+      imageEl.alt = slide.alt;
+      paperEl.textContent = slide.paper;
+      descEl.textContent = slide.description;
+      imageEl.classList.remove('is-swapping');
+      renderDots();
+    }, 160);
+
+    if (resetTimer) {
+      clearInterval(timer);
+      timer = setInterval(nextSlide, 4000);
+    }
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    updateSlide(false);
+  }
+
+  renderDots();
+  timer = setInterval(nextSlide, 4000);
+});
+</script>
+</body></html>
